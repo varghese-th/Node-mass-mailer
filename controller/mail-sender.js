@@ -18,10 +18,10 @@ module.exports = {
 	    // setup email data with unicode symbols
 	    let mailOptions = {
 	        from: '"Varghese" <joyalexaj19@gmail.com>', // sender address
-	        to: 'vthomask96@gmail.com', // list of receivers
-	        subject: 'New form',
-	        // text: 'Hello world?',
-	        html: '<h3>Name: ' + req.body.name
+	        to: mailToList, // list of receivers
+	        subject: mailSubject,
+	        text: mailText
+	        // html: '<h3>Name: ' + req.body.mail_body
 	    };
 
 	    // send mail with defined transport object
@@ -32,6 +32,6 @@ module.exports = {
 	        console.log('Message sent');
 	    });
 
-	    res.redirect('/mail')
+	    next();
 	}
 }

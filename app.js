@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // created roots
 app.use('/', require('./routes/index.js'));
-app.use('/mail', require('./routes/mail.js'));
+app.use('/mail-form', require('./routes/mail-form.js'));
 
 
 // catch 404 and forward to error handler
