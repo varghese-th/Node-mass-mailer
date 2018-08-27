@@ -1,3 +1,5 @@
+// controller which sends the mail
+
 var nodemailer = require('nodemailer');
 
 module.exports = {
@@ -29,7 +31,7 @@ module.exports = {
 	        if (error) {
 	            return console.log(error);
 	        }
-	        console.log('Message sent');
+	        console.log('Mail sent');
 	    });
 
 	    next();
