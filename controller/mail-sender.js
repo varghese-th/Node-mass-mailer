@@ -33,7 +33,7 @@ module.exports = {
 	        if (error) {
 	            return console.log(error);
 	        }
-	        console.log('Mail sent');
+	        console.log('Mail sent to ' + mailToList.length + ' contact(s)');
 	    });
 
 	    next();
