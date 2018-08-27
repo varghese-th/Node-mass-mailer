@@ -1,3 +1,8 @@
 {
-	
+	"mail": {
+		"host": "smtp.gmail.com",
+		"mainmail": "joyalexaj19@gmail.com",
+		"mainmailpass": "hello@hello",
+		"mainname" : "Varghese"
+	}
 }
