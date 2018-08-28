@@ -6,5 +6,12 @@ module.exports = {
 						'joyalexaj19@gmail.com',
 						'varghese.tblr@gmail.com' ];
 		next();
+	},
+
+	settingmailToListName: function(req, res, next) {
+		mailToListName = [ 	'vthomask',
+							'joyalex',
+							'vtblr' ];
+		next();
 	}
 }

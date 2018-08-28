@@ -14,6 +14,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/send', urlencodedParser, 	MailFormController.settingmailSubject,
 										MailToController.settingmailToList,
+										MailToController.settingmailToListName,
 										MailFormController.settingmailText,
 										MailSenderController.sendingMail,
 										MailFormController.viewPage);
