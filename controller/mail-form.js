@@ -6,7 +6,7 @@ module.exports = {
 	},
 
 	settingmailSubject: function (req, res, next) {
-		mailSubject = req.body.mail_subject;
+		mailSubject = req.body.mailSubjectFormInput;
 		next();
 	},
 
@@ -16,7 +16,7 @@ module.exports = {
 	// },
 
 	settingmailText: function (req, res, next) {
-		mailText = req.body.mail_body;
+		mailText = req.body.mailBodyFormInput;
 		next();
 	}
 }

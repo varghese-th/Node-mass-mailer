@@ -54,17 +54,17 @@ module.exports = {
 	        } // tls is used while using a localhost
 	    });
 
-	    let success_array = [];
+	    let successMailArray = [];
 
-	    for (var i=0; i<=(mailToList.length-1); i++) {
+	    for (var mailToListLoop=0; mailToListLoop<=(mailToList.length-1); mailToListLoop++) {
 
 		    // setup email data with unicode symbols
 		    let mailOptions = {
 		        from: '"' + config.mail.mainname + '" <'+ config.mail.mainmail + '>', // sender address
-		        to: mailToList[i], // list of receivers
+		        to: mailToList[mailToListLoop], // list of receivers
 		        subject: mailSubject,
 		        // text: mailText
-		        html: '<h3>Name:</h3> <span>' + mailToListName[i] + '</span>'
+		        html: '<h3>Name:</h3> <span>' + mailToListName[mailToListLoop] + '</span>'
 		    };
 
 		    // send mail with defined transport object
@@ -73,8 +73,8 @@ module.exports = {
 		            return console.log(error);
 		        }
 		        else {
-		        	success_array.push(mailOptions.to);
-		        	console.log('Mail sent to (' + success_array.length + '/' + mailToList.length + ') contacts(s)');
+		        	successMailArray.push(mailOptions.to);
+		        	console.log('Mail sent to (' + successMailArray.length + '/' + mailToList.length + ') contacts(s)');
 		        }
 		    });
 
@@ -82,6 +82,5 @@ module.exports = {
 
 	    next();
 	}
-
 
 }
