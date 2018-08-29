@@ -41,18 +41,7 @@ module.exports = {
 
 	sendingMail: function (req, res, next) {
 	   
-	    let transporter = nodemailer.createTransport({
-	        host: config.mail.host, // has to change while not using gmail eg: mail.companyname.com
-	        port: 587,
-	        secure: false, // true for 465, false for other ports
-	        auth: {
-	            user: config.mail.mainmail,
-	            pass: config.mail.mainmailpass
-	        },
-	        tls: {
-	        	rejectUnauthorized: false
-	        } // tls is used while using a localhost
-	    });
+	    let transporter = nodemailer.createTransport(config.authenticationMail);
 
 	    let successMailArray = [];
 
@@ -64,7 +53,7 @@ module.exports = {
 		        to: mailToList[mailToListLoop], // list of receivers
 		        subject: mailSubject,
 		        // text: mailText
-		        html: '<h3>Name:</h3> <span>' + mailToListName[mailToListLoop] + '</span>'
+		        html: '<strong>Name:</strong> ' + mailToListName[mailToListLoop]
 		    };
 
 		    // send mail with defined transport object

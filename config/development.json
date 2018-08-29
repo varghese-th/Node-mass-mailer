@@ -4,5 +4,7 @@
 		"mainmail": "fortestmail19@gmail.com",
 		"mainmailpass": "hello_hello",
 		"mainname" : "Testmail"
-	}
+	},
+
+	"authenticationMail": "smtps://fortestmail19@gmail.com:hello_hello@smtp.gmail.com"
 }
