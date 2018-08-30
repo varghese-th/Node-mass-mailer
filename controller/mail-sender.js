@@ -43,7 +43,7 @@ module.exports = {
 	   
 	    let transporter = nodemailer.createTransport(config.authenticationMail);
 
-	    let successMailArray = [];
+		let successMailArray = [];
 
 	    for (var mailToListLoop=0; mailToListLoop<=(mailToList.length-1); mailToListLoop++) {
 
@@ -69,7 +69,7 @@ module.exports = {
 
 		}
 
-	    next();
+		next();
 	}
 
 }
