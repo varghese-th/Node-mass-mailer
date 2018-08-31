@@ -5,6 +5,7 @@ var config = require('config');
 
 module.exports = {
 	
+	// initial sending function
 	// sendingMail: function (req, res, next) {
 	//     let transporter = nodemailer.createTransport({
 	//         host: config.mail.host, // has to change while not using gmail eg: mail.companyname.com
@@ -39,6 +40,8 @@ module.exports = {
 	//     next();
 	// }
 
+	
+	// sending function with for loop(main)
 	// sendingMail: function (req, res, next) {
 	   
 	//     let transporter = nodemailer.createTransport(config.authenticationMail);
@@ -72,7 +75,8 @@ module.exports = {
 	// 	next();
 	// }
 
-
+	
+	// sending function with asyc call and loop
 	// sendingMail: function (req, res, next) {
 	   
 	//     let transporter = nodemailer.createTransport(config.authenticationMail);
@@ -121,15 +125,17 @@ module.exports = {
 	// 	next();
 	// }
 
-
+	
+	// single mail with async call
 	// sendingMail: function (req, res, next) {
 	   
 	//     let transporter = nodemailer.createTransport(config.authenticationMail);
 
-	// 	let successMailArray = [];
+	// 	// let successMailArray = [];
 
 	// 	function toMailFunction() 
 	// 	{
+	// 		let successMailArray = [];
 	// 		return new Promise( resolve =>	{    
 
 	// 			    // setup email data with unicode symbols
@@ -168,50 +174,52 @@ module.exports = {
 	// 	next();
 	// }
 
-	sendingMail: function (req, res, next) {
+	
+	// to check callback
+	// sendingMail: function (req, res, next) {
 	   
-	    let transporter = nodemailer.createTransport(config.authenticationMail);
+	//     let transporter = nodemailer.createTransport(config.authenticationMail);
 
-		let successMailArray = [];
+	// 	let successMailArray = [];
 
-		function toMailFunction(callback) 
-		{
+	// 	function toMailFunction(callback) 
+	// 	{
  
 
-				    // setup email data with unicode symbols
-				    let mailOptions = {
-				        from: '"' + config.mail.mainname + '" <'+ config.mail.mainmail + '>', // sender address
-				        to: 'varghese.tblr@gmail.com', // list of receivers
-				        subject: mailSubject,
-				        // text: mailText
-				        html: '<strong>Name:</strong> '
-				    };
+	// 			    // setup email data with unicode symbols
+	// 			    let mailOptions = {
+	// 			        from: '"' + config.mail.mainname + '" <'+ config.mail.mainmail + '>', // sender address
+	// 			        to: 'varghese.tblr@gmail.com', // list of receivers
+	// 			        subject: mailSubject,
+	// 			        // text: mailText
+	// 			        html: '<strong>Name:</strong> '
+	// 			    };
 
-				    // send mail with defined transport object
-				    transporter.sendMail(mailOptions, (error) => {
-				        // console.log(mailOptions.to);
-				        if (error) {
-				            return console.log(error);
-				        }
-				        else {
-				        	successMailArray.push(mailOptions.to);
-				        	console.log('Mail sent to (' + successMailArray.length + '/' + mailToList.length + ') contacts(s)');
-				        }
-				    });
-
-
-				callback(successMailArray);
-
-		}
-
-		toMailFunction() {
-			let successMailArray = await toMailFunction();
-			console.log('Success: ' + successMailArray.length);
-		}
+	// 			    // send mail with defined transport object
+	// 			    transporter.sendMail(mailOptions, (error) => {
+	// 			        // console.log(mailOptions.to);
+	// 			        if (error) {
+	// 			            return console.log(error);
+	// 			        }
+	// 			        else {
+	// 			        	successMailArray.push(mailOptions.to);
+	// 			        	console.log('Mail sent to (' + successMailArray.length + '/' + mailToList.length + ') contacts(s)');
+	// 			        }
+	// 			    });
 
 
-		next();
-	}
+	// 			callback(successMailArray);
+
+	// 	}
+
+	// 	toMailFunction() {
+	// 		let successMailArray = await toMailFunction();
+	// 		console.log('Success: ' + successMailArray.length);
+	// 	}
+
+
+	// 	next();
+	// }
 
 }
 // https://stackoverflow.com/questions/47158979/node-wait-for-async-function-before-continue
