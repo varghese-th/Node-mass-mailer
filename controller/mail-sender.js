@@ -180,11 +180,11 @@ module.exports = {
 	   
 	//     let transporter = nodemailer.createTransport(config.authenticationMail);
 
-	// 	let successMailArray = [];
+		
 
 	// 	function toMailFunction(callback) 
 	// 	{
- 
+ // 					let successMailArray = [];
 
 	// 			    // setup email data with unicode symbols
 	// 			    let mailOptions = {
@@ -212,10 +212,9 @@ module.exports = {
 
 	// 	}
 
-	// 	toMailFunction() {
-	// 		let successMailArray = await toMailFunction();
+	// 	toMailFunction(function(successMailArray) {
 	// 		console.log('Success: ' + successMailArray.length);
-	// 	}
+	// 	})
 
 
 	// 	next();
