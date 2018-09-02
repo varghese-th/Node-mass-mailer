@@ -12,11 +12,13 @@ router.get('/', function(req, res, next) {
 	res.render('mail-form.ejs')
 });
 
-router.post('/send', urlencodedParser, 	MailFormController.settingmailSubject,
-										MailToController.settingmailToList,
-										MailToController.settingmailToListName,
-										MailFormController.settingmailText,
-										MailSenderController.sendingMail,
-										MailFormController.viewPage);
+// router.post('/send', urlencodedParser, 	MailFormController.settingmailSubject,
+// 										MailToController.settingmailToList,
+// 										MailToController.settingmailToListName,
+// 										MailFormController.settingmailText,
+// 										MailSenderController.sendingMail,
+// 										MailFormController.viewPage);
+
+router.get('/database', MailToController.viewDatabase);
 
 module.exports = router;

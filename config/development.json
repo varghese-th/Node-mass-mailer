@@ -6,5 +6,13 @@
 		"mainname" : "Testmail"
 	},
 
-	"authenticationMail": "smtps://fortestmail19@gmail.com:hello_hello@smtp.gmail.com"
+	"authenticationMail": "smtps://fortestmail19@gmail.com:hello_hello@smtp.gmail.com",
+
+	"databaseConnection": {
+		"host": "localhost",
+		"user": "root",
+		"password": "yourpassword",
+		"database": "vf",
+		"tableName": "trt"
+	}
 }
