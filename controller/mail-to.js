@@ -11,30 +11,35 @@ var con = mysql.createConnection({
 
 
 module.exports = {
-// 	settingmailToList: function(req, res, next) {
-// 		mailToList = [ 	'vthomask96@gmail.com',
-// 						'joyalexaj19@gmail.com',
-// 						'varghese.tblr@gmail.com' ];
-// 		next();
-// 	},
+	settingtestMail: function(req, res, next) {
+		mailToList = [ req.body.testMailFormInput ];
+		next();
+	},
 
-// 	settingmailToListName: function(req, res, next) {
-// 		mailToListName = [ 	'vthomask',
-// 							'joyalex',
-// 							'vtblr' ];
-// 		next();
-// 	}
+	settingmailToList: function(req, res, next) {
+		mailToList = [ 	'vthomask96@gmail.com',
+						'joyalexaj19@gmail.com',
+						'varghese.tblr@gmail.com' ];
+		next();
+	},
 
-viewDatabase: function (req, res, next) {
-	con.connect(function(err) {
-	  	if (err) throw err;
-	  	var sqlQuery = "SELECT * FROM " + config.databaseConnection.tableName;
-	  	con.query(sqlQuery, function (err, result, fields) {
-	    	if (err) throw err;
-	    	console.log(result);
-	  	});
-	});
-}
+	settingmailToListName: function(req, res, next) {
+		mailToListName = [ 	'vthomask',
+							'joyalex',
+							'vtblr' ];
+		next();
+	}
+
+// viewDatabase: function (req, res, next) {
+// 	con.connect(function(err) {
+// 	  	if (err) throw err;
+// 	  	var sqlQuery = "SELECT * FROM " + config.databaseConnection.tableName;
+// 	  	con.query(sqlQuery, function (err, result, fields) {
+// 	    	if (err) throw err;
+// 	    	console.log(result);
+// 	  	});
+// 	});
+// }
 
 }
 

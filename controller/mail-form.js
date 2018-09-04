@@ -2,7 +2,7 @@
 
 module.exports = {
 	viewPage: function (req, res, next) {
-		res.redirect('/mail-form');
+		res.end('it worked');
 	},
 
 	settingmailSubject: function (req, res, next) {

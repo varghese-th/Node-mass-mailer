@@ -9,16 +9,21 @@ var MailSenderController = require('./../controller/mail-sender.js');
 var MailToController = require('./../controller/mail-to.js')
 
 router.get('/', function(req, res, next) {
-	res.render('mail-form.ejs')
+	res.render('mail-form.ejs');
 });
 
-// router.post('/send', urlencodedParser, 	MailFormController.settingmailSubject,
-// 										MailToController.settingmailToList,
-// 										MailToController.settingmailToListName,
-// 										MailFormController.settingmailText,
-// 										MailSenderController.sendingMail,
-// 										MailFormController.viewPage);
+router.post('/testmail', urlencodedParser, 	MailFormController.settingmailSubject,
+											MailToController.settingtestMail,
+											MailSenderController.sendingMail,
+											MailFormController.viewPage);
 
-router.get('/database', MailToController.viewDatabase);
+router.post('/send', urlencodedParser, 	MailFormController.settingmailSubject,
+										MailToController.settingmailToList,
+										MailToController.settingmailToListName,
+										MailFormController.settingmailText,
+										MailSenderController.sendingMail,
+										MailFormController.viewPage);
+
+// router.get('/database', MailToController.viewDatabase);
 
 module.exports = router;

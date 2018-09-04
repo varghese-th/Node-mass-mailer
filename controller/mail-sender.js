@@ -42,38 +42,38 @@ module.exports = {
 
 	
 	// sending function with for loop(main)
-	// sendingMail: function (req, res, next) {
+	sendingMail: function (req, res, next) {
 	   
-	//     let transporter = nodemailer.createTransport(config.authenticationMail);
+	    let transporter = nodemailer.createTransport(config.authenticationMail);
 
-	// 	let successMailArray = [];
+		let successMailArray = [];
 
-	//     for (var mailToListLoop=0; mailToListLoop<=(mailToList.length-1); mailToListLoop++) {
+	    for (var mailToListLoop=0; mailToListLoop<=(mailToList.length-1); mailToListLoop++) {
 
-	// 	    // setup email data with unicode symbols
-	// 	    let mailOptions = {
-	// 	        from: '"' + config.mail.mainname + '" <'+ config.mail.mainmail + '>', // sender address
-	// 	        to: mailToList[mailToListLoop], // list of receivers
-	// 	        subject: mailSubject,
-	// 	        // text: mailText
-	// 	        html: '<strong>Name:</strong> ' + mailToListName[mailToListLoop]
-	// 	    };
+		    // setup email data with unicode symbols
+		    let mailOptions = {
+		        from: '"' + config.mail.mainname + '" <'+ config.mail.mainmail + '>', // sender address
+		        to: mailToList[mailToListLoop], // list of receivers
+		        subject: mailSubject,
+		        // text: mailText
+		        html: '<strong>Name:</strong> ' //+ mailToListName[mailToListLoop]
+		    };
 
-	// 	    // send mail with defined transport object
-	// 	    transporter.sendMail(mailOptions, (error, info) => {
-	// 	        if (error) {
-	// 	            return console.log(error);
-	// 	        }
-	// 	        else {
-	// 	        	successMailArray.push(mailOptions.to);
-	// 	        	console.log('Mail sent to (' + successMailArray.length + '/' + mailToList.length + ') contacts(s)');
-	// 	        }
-	// 	    });
+		    // send mail with defined transport object
+		    transporter.sendMail(mailOptions, (error, info) => {
+		        if (error) {
+		            return console.log(error);
+		        }
+		        else {
+		        	successMailArray.push(mailOptions.to);
+		        	console.log('Mail sent to (' + successMailArray.length + '/' + mailToList.length + ') contacts(s)');
+		        }
+		    });
 
-	// 	}
+		}
 
-	// 	next();
-	// }
+		next();
+	}
 
 	
 	// sending function with asyc call and loop
