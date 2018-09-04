@@ -13,17 +13,17 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/testmail', urlencodedParser, 	MailFormController.settingmailSubject,
+											MailFormController.settingmailSalutation,
+											MailFormController.settingmailBody,
 											MailToController.settingtestMail,
 											MailSenderController.sendingMail,
 											MailFormController.viewPage);
 
 router.post('/send', urlencodedParser, 	MailFormController.settingmailSubject,
+										MailFormController.settingmailSalutation,
+										MailFormController.settingmailBody,
 										MailToController.settingmailToList,
-										MailToController.settingmailToListName,
-										MailFormController.settingmailText,
 										MailSenderController.sendingMail,
 										MailFormController.viewPage);
-
-// router.get('/database', MailToController.viewDatabase);
 
 module.exports = router;

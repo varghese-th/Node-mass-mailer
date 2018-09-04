@@ -53,10 +53,10 @@ module.exports = {
 		    // setup email data with unicode symbols
 		    let mailOptions = {
 		        from: '"' + config.mail.mainname + '" <'+ config.mail.mainmail + '>', // sender address
-		        to: mailToList[mailToListLoop], // list of receivers
+		        to: mailToList[mailToListLoop].mailid, // list of receivers
 		        subject: mailSubject,
 		        // text: mailText
-		        html: '<strong>Name:</strong> ' //+ mailToListName[mailToListLoop]
+		        html: '<strong>' + mailSalutation + ' ' + mailToList[mailToListLoop].name + '</strong>,<br><pre>' + mailBody + '<pre>'
 		    };
 
 		    // send mail with defined transport object

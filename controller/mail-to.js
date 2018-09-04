@@ -12,21 +12,15 @@ var con = mysql.createConnection({
 
 module.exports = {
 	settingtestMail: function(req, res, next) {
-		mailToList = [ req.body.testMailFormInput ];
+		mailToList = [ { name: 'User', mailid: req.body.testMailFormInput } ];
 		next();
 	},
 
 	settingmailToList: function(req, res, next) {
-		mailToList = [ 	'vthomask96@gmail.com',
-						'joyalexaj19@gmail.com',
-						'varghese.tblr@gmail.com' ];
-		next();
-	},
-
-	settingmailToListName: function(req, res, next) {
-		mailToListName = [ 	'vthomask',
-							'joyalex',
-							'vtblr' ];
+		mailToList = [ 	{ name: 'vthomask', mailid: 'vthomask96@gmail.com', price: '1200' },
+						{ name: 'joyalex', mailid: 'joyalexaj19@gmail.com', price: '1300' },
+						{ name: 'vtblr', mailid: 'varghese.tblr@gmail.com', price: '1400' }
+					];
 		next();
 	}
 

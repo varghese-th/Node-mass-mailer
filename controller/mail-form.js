@@ -2,7 +2,10 @@
 
 module.exports = {
 	viewPage: function (req, res, next) {
-		res.end('it worked');
+		// var reply = '';
+		// reply += "<strong>Name</strong> : " + req.body.name;
+		// reply += "<br><strong>Address</strong> : " + req.body.address;
+		res.send();
 	},
 
 	settingmailSubject: function (req, res, next) {
@@ -10,13 +13,13 @@ module.exports = {
 		next();
 	},
 
-	// settingmailToList: function (req, res, next) {
-	// 	mailToList = 'vthomask96@gmail.com';
-	// 	next();
-	// },
+	settingmailSalutation: function(req, res, next) {
+		mailSalutation = req.body.mailSalutationFormInput
+		next();
+	},
 
-	settingmailText: function (req, res, next) {
-		mailText = req.body.mailBodyFormInput;
+	settingmailBody: function (req, res, next) {
+		mailBody = req.body.mailBodyFormInput;
 		next();
 	}
 }
