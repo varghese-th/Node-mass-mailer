@@ -34,7 +34,7 @@
     #contact {
       background:#F9F9F9;
       padding:25px;
-      margin:50px 0;
+      /*margin:50px 0;*/
     }
 
     #contact h3 {
@@ -160,6 +160,13 @@
         width: 30%;
     }
 
+    #attachementid input {
+        /*background-color: red;*/
+        /*padding: 0;*/
+        /*margin: 0;*/
+    }
+
+
     </style>
     </head>
 
@@ -183,6 +190,9 @@
                 <fieldset>
                     <a>Mail Content : </a>
                     <textarea  name="mailBodyFormInput" required></textarea>
+                </fieldset>
+                <fieldset id="attachementid">
+                    <input type="file" name="mailAttachementFormInput">
                 </fieldset>
           </div>
               </div>
