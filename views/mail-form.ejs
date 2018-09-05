@@ -2,8 +2,8 @@
 <html>
 
     <head>
-
-    <link rel="stylesheet" type="text/css" href="css/mail-form.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/mail-form.css">
     </head>
 
     <body>
@@ -15,17 +15,17 @@
                 <br>
                 <fieldset>
                     <a>Mail Subject : </a> 
-                    <input  name="mailSubjectFormInput" type="text" required>
+                    <input  name="mailSubjectFormInput" type="text" value="<%= mailSubjectFormInput %>" required>
                 </fieldset>                
                 <fieldset id="salutationid">
                     <a style="display: block;margin: 0; margin-bottom: 2px;">Salutation : </a>
-                    <input name="mailSalutationFormInput" type="text" required>
+                    <input name="mailSalutationFormInput" type="text" value="<%= mailSalutationFormInput %>" required>
                     <a>+ Receiver Name</a>
                     <p>eg: Dear John, Hello Annie</p>
                 </fieldset>
                 <fieldset>
                     <a>Mail Content : </a>
-                    <textarea  name="mailBodyFormInput" required></textarea>
+                    <textarea  name="mailBodyFormInput" required><%= mailBodyFormInput %></textarea>
                 </fieldset>
 <!--                 <fieldset id="attachementid">
                     <input type="file" name="mailAttachementFormInput">
@@ -38,7 +38,7 @@
                 <br>
                 <fieldset>
                     <a>Test Mail : </a>
-                    <input  name="testMailFormInput" type="text">
+                    <input  name="testMailFormInput" type="text" value="<%= testMailFormInput %>">
                 </fieldset>
                 <fieldset>
                     <button type="submit" formaction="/mail-form/testmail">Test</button>
