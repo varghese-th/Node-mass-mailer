@@ -6,7 +6,8 @@ var urlencodedParser = bodyParser.urlencoded({ extended: true });
 // calling controllers
 var MailFormController = require('./../controller/mail-form.js');
 var MailSenderController = require('./../controller/mail-sender.js');
-var MailToController = require('./../controller/mail-to.js')
+var MailToController = require('./../controller/mail-to.js');
+var RedirectController = require('./../controller/redirectcontroller.js');
 
 router.get('/', function(req, res, next) {
 	res.render('mail-form.ejs');
@@ -17,13 +18,13 @@ router.post('/testmail', urlencodedParser, 	MailFormController.settingmailSubjec
 											MailFormController.settingmailBody,
 											MailToController.settingtestMail,
 											MailSenderController.sendingMail,
-											MailFormController.viewPage);
+											RedirectController.viewPage);
 
 router.post('/send', urlencodedParser, 	MailFormController.settingmailSubject,
 										MailFormController.settingmailSalutation,
 										MailFormController.settingmailBody,
 										MailToController.settingmailToList,
 										MailSenderController.sendingMail,
-										MailFormController.viewPage);
+										RedirectController.viewPage);
 
 module.exports = router;

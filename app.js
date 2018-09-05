@@ -19,6 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // created roots
 app.use('/', require('./routes/index.js'));
 app.use('/mail-form', require('./routes/mail-form.js'));
+app.use('/database-operations', require('./routes/database-operations.js'));
 
 
 // catch 404 and forward to error handler
