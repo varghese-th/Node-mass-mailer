@@ -10,7 +10,11 @@ var MailToController = require('./../controller/mail-to.js');
 // var RedirectController = require('./../controller/redirectcontroller.js');
 
 router.get('/', function(req, res, next) {
-	res.render('mail-form.ejs', { mailSubjectFormInput: '', mailSalutationFormInput: '', mailBodyFormInput: '', testMailFormInput: '' });
+	res.render('mail-form.ejs', { 	mailSubjectFormInput: '',
+									mailSalutationFormInput: '',
+									mailBodyFormInput: '',
+									testMailFormInput: '',
+									testMailError: '' });
 });
 
 router.post('/testmail', urlencodedParser, 	MailFormController.settingmailSubject,

@@ -2,7 +2,11 @@
 
 module.exports = {
 	viewPage: function (req, res, next) {
-		res.render('mail-form.ejs', { mailSubjectFormInput: req.body.mailSubjectFormInput, mailSalutationFormInput: req.body.mailSalutationFormInput, mailBodyFormInput: req.body.mailBodyFormInput, testMailFormInput: req.body.testMailFormInput });
+		res.render('mail-form.ejs', { 	mailSubjectFormInput: req.body.mailSubjectFormInput,
+										mailSalutationFormInput: req.body.mailSalutationFormInput,
+										mailBodyFormInput: req.body.mailBodyFormInput,
+										testMailFormInput: req.body.testMailFormInput,
+										testMailError: '' });
 	},
 
 	settingmailSubject: function (req, res, next) {

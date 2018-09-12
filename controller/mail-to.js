@@ -12,8 +12,17 @@ var con = mysql.createConnection({
 
 module.exports = {
 	settingtestMail: function(req, res, next) {
-		mailToList = [ { name: 'User', mailid: req.body.testMailFormInput } ];
-		next();
+		if(req.body.testMailFormInput == '') {
+			res.render('mail-form.ejs', { 	mailSubjectFormInput: req.body.mailSubjectFormInput,
+											mailSalutationFormInput: req.body.mailSalutationFormInput,
+											mailBodyFormInput: req.body.mailBodyFormInput,
+											testMailFormInput: req.body.testMailFormInput,
+											testMailError: 'error: Recepient Not Mentioned' });
+		}
+		else {
+			mailToList = [ { name: 'User', mailid: req.body.testMailFormInput } ];
+			next();
+		}
 	},
 
 	settingmailToList: function(req, res, next) {
