@@ -117,6 +117,7 @@ module.exports = {
 		}
 
 		async function toConsoleFunction() {
+			console.time('Mail Send in');
 			let mailToListLoop = await toMailFunction();
 			// console.log('mailToListLoop: ' + mailToListLoop);
 			if(mailToListLoop != mailToList.length)
@@ -125,6 +126,7 @@ module.exports = {
 			}
 			else{
 				console.log('\n');
+				console.timeEnd('Mail Send in');
 				console.log('** Send Report **');
 				console.log('Total mails To be send : ' + mailToList.length);
 				console.log('Mails Send Succesfully : ' + successMailArray.length);

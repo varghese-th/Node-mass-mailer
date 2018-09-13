@@ -27,11 +27,25 @@ module.exports = {
 	},
 
 	settingmailToList: function(req, res, next) {
-		mailToList = [ 	{ name: 'vthomask', mailid: 'vthomask96@gmail.com', price: '1200' },
-						{ name: 'joyalex', mailid: 'joyalexaj19@gmail.com', price: '1300' },
-						{ name: 'vtblr', mailid: 'varghese.tblr@gmail.com', price: '1400' }
-					];
-		next();
+		function toFillDatabaseFunction() 
+		{
+			return new Promise( resolve =>	{  
+				mailToList = [ 	{ name: 'vthomask', mailid: 'vthomask96@gmail.com', price: '1200' },
+								{ name: 'joyalex', mailid: 'joyalexaj19@gmail.com', price: '1300' },
+								{ name: 'vtblr', mailid: 'varghese.tblr@gmail.com', price: '1400' }
+							];
+				resolve(mailToList);
+			});
+		}
+
+		async function databaseFillCompleteFunction() {
+			let mailToList = await toFillDatabaseFunction();
+			console.log('\n** MailtoList Filled **');
+			console.log('Contents in mailToList : ' + mailToList.length + '\n');
+			next();
+		}
+
+		databaseFillCompleteFunction();
 	}
 
 // viewDatabase: function (req, res, next) {
