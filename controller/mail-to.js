@@ -17,7 +17,8 @@ module.exports = {
 											mailSalutationFormInput: req.body.mailSalutationFormInput,
 											mailBodyFormInput: req.body.mailBodyFormInput,
 											testMailFormInput: req.body.testMailFormInput,
-											testMailError: 'error: Recepient Not Mentioned' });
+											testMailError: 'error: Recepient Not Mentioned',
+											databaseMailError: '' });
 		}
 		else {
 			mailToList = [ { name: 'User', mailid: req.body.testMailFormInput } ];

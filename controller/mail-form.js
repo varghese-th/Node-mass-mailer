@@ -1,12 +1,22 @@
 // controller to set the mailSubject and mailText
 
 module.exports = {
-	viewPage: function (req, res, next) {
+	viewPageTestmail: function (req, res, next) {
 		res.render('mail-form.ejs', { 	mailSubjectFormInput: req.body.mailSubjectFormInput,
 										mailSalutationFormInput: req.body.mailSalutationFormInput,
 										mailBodyFormInput: req.body.mailBodyFormInput,
 										testMailFormInput: req.body.testMailFormInput,
-										testMailError: '' });
+										testMailError: 'info: check console for report',
+										databaseMailError: '' });
+	},
+
+	viewPageDatabase: function (req, res, next) {
+		res.render('mail-form.ejs', { 	mailSubjectFormInput: req.body.mailSubjectFormInput,
+										mailSalutationFormInput: req.body.mailSalutationFormInput,
+										mailBodyFormInput: req.body.mailBodyFormInput,
+										testMailFormInput: req.body.testMailFormInput,
+										testMailError: '',
+										databaseMailError: 'info: check console for report' });
 	},
 
 	settingmailSubject: function (req, res, next) {

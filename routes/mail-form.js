@@ -14,7 +14,8 @@ router.get('/', function(req, res, next) {
 									mailSalutationFormInput: '',
 									mailBodyFormInput: '',
 									testMailFormInput: '',
-									testMailError: '' });
+									testMailError: '',
+									databaseMailError: '' });
 });
 
 router.post('/testmail', urlencodedParser, 	MailFormController.settingmailSubject,
@@ -22,13 +23,13 @@ router.post('/testmail', urlencodedParser, 	MailFormController.settingmailSubjec
 											MailFormController.settingmailBody,
 											MailToController.settingtestMail,
 											MailSenderController.sendingMail,
-											MailFormController.viewPage);
+											MailFormController.viewPageTestmail);
 
 router.post('/send', urlencodedParser, 	MailFormController.settingmailSubject,
 										MailFormController.settingmailSalutation,
 										MailFormController.settingmailBody,
 										MailToController.settingmailToList,
 										MailSenderController.sendingMail,
-										MailFormController.viewPage);
+										MailFormController.viewPageDatabase);
 
 module.exports = router;
