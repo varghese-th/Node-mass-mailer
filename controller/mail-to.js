@@ -39,8 +39,11 @@ module.exports = {
 		}
 
 		async function databaseFillCompleteFunction() {
+			console.time('MailtoList Filled in');
 			let mailToList = await toFillDatabaseFunction();
-			console.log('\n** MailtoList Filled **');
+			console.log('\n');
+			console.timeEnd('MailtoList Filled in');
+			console.log('** MailtoList Filled **');
 			console.log('Contents in mailToList : ' + mailToList.length + '\n');
 			next();
 		}
