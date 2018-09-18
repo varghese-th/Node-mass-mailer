@@ -83,6 +83,7 @@ module.exports = {
 	    let transporter = nodemailer.createTransport(config.authenticationMail);
 
 		let successMailArray = [];
+		let failureMailArray = [];
 		let mailToListLoop = 0;
 
 
@@ -103,7 +104,10 @@ module.exports = {
 		    // send mail with defined transport object
 		    transporter.sendMail(mailOptions, (error, info) => {
 		        if (error) {
-		            return console.log(error);
+		            // console.log(error);
+		            failureMailArray.push(mailOptions.to);
+		            mailToListLoop = mailToListLoop + 1;
+		            resolve(mailToListLoop);
 		        }
 		        else {
 		        	successMailArray.push(mailOptions.to);
@@ -130,7 +134,7 @@ module.exports = {
 				console.log('** Send Report **');
 				console.log('Total mails To be send : ' + mailToList.length);
 				console.log('Mails Send Succesfully : ' + successMailArray.length);
-				console.log('Mails Not send         : ' + (mailToList.length - successMailArray.length));
+				console.log('Mails Not send         : ' + failureMailArray.length);
 				console.log('\n');
 			}
 		}
