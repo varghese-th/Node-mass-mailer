@@ -8,6 +8,7 @@ var app = require('../app');
 var debug = require('debug')('node-mass-mailer:server');
 var http = require('http');
 var ip = require('ip');
+var open = require('open');
 
 /**
  * Get port from environment and store in Express.
@@ -26,8 +27,11 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port, ip.address());
-console.log('Server running on : ' + ip.address() + ':' + port + '\n');
+server.listen(port, ip.address(), function() {
+  console.log('Server running on : ' + ip.address() + ':' + port);
+  console.log('Launching the browser...!\n');
+  open('http://' + ip.address() + ':' + port);
+});
 server.on('error', onError);
 server.on('listening', onListening);
 
